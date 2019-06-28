@@ -1,70 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+  <meta charset="utf-8">
+  <title>World Cup History</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>template</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/style.css">
 </head>
 
+
+
 <body>
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 jumbotron text-center">
-        <h1>fifa</h1>
-        <p>Utext</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2">
-        <div class="well">
-          <h5>SELECT year:</h5>
-          <!-- optionChanged will contain the sample number to pass to java -->
-          <select id="selDataset" onchange="optionChanged(this.value)">
-          
-                   
-          </select>
-        </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">chart1</h3>
-          </div>
-          <div id="sample-metadata" class="panel-body"></div>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">Fifa Worldcup
+            <img class="nav-ufo" src="../Images/soccer-ball.svg" style="width:40px;height:40px;">
+          </a>
         </div>
       </div>
-      <div class="col-md-5">
-        <!-- pie -->
-        <div id="pie"></div>
-
-
-
-
-
-
-
-      </div>
-      <div class="col-md-5">
-        <div id="chart2"></div>
-      </div>
+    </nav>
+    <div class="hero text-center">
+      <h1>The  Fifa World Cup</h1>
+      <p>History</p>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div id="chart3"></div>
-    </div>
-  </div>
 
-  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <!-- <script src="{{ url_for('static', filename='js/bonus.js') }}"></script> -->
-  <!-- <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
-  <script src="../static/js/app.js"></script>
+
+
+   
+<!-- start charts -->
+<!-- drop down -->
+<div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+           
+            <h5>SELECT YEAR:</h5>
+            <!-- optionChanged will contain the sample number to pass to java -->
+            <select id="selDataset" onchange="optionChanged(this.value)">
+                                 
+            </select>
+        
+        </div> 
+        <div class="col-md-1"></div> 
+</div>
+
+
+
+<!-- Chart 1  -->
+<div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+                <h3>Holder for chart one text</h3>
+                <div id="chart1"></div>
+           
+        </div>
+        <div class="col-md-1"></div>
+</div>
+
+
+<!-- Chart 2  -->
+<div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+                <h3>Holder for chart two text</h3>
+                <div id="chart2"></div>
+           
+        </div>
+        <div class="col-md-1"></div>
+</div>
+
+
+<!-- Chart 3  -->
+<div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+                <h3>Holder for chart three text</h3>
+                <div id="chart3"></div>
+        
+        </div>
+        <div class="col-md-1"></div>
+</div>
+
+
+
+
+
+
+<!-- close chart . -->
+
   
+
+ <!-- close container -->
+    <footer class="footer">
+            <span class="bottom">
+            <h7>Credits:</h7>
+            <h7>Photo by Jannes Glas on Unsplash</h7>
+            <div>Icons made by <a href="https://www.freepik.com/?__hstc=57440181.ed3373f32600c5142b5c0f3e296f572b.1561742083897.1561742083897.1561742083897.1&__hssc=57440181.1.1561742083901&__hsfp=3556510710" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+            </span>
+    </footer>
+ <!-- close wraper -->
+  </div>
+  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+   <script src="../static/js/app.js"></script>
+
 </body>
 
 </html>
