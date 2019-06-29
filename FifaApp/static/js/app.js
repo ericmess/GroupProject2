@@ -6,13 +6,13 @@ function init() {
     var selector = d3.select("#selDataset");
 
     // Use the list of years  to populate the select options
-     d3.json("/years").then((Years.Years) => {
+     d3.json("/years").then((Years) => {
        Years.forEach((year) => {
-            console.log(year);
+            console.log(year.Year);
           selector
             .append("option")
-            .text(year)
-            .property("value", year);
+            .text(year.Year)
+            .property("value", year.Year);
          });
         });
 
