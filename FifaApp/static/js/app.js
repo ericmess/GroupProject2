@@ -38,7 +38,7 @@ function createMap(locations) {
     } // end function create map
 
 //Eric Kleppen - Create the circles on the map
-function createMarkers(year.Year) {
+function createMarkers(year) {
 
 //api call
 var map_url = `/FinalGamesByYear/${year.Year}`;
@@ -119,6 +119,6 @@ function optionChanged(year.Year) {
         //remove map element from html    
         map.remove()       
         //lg.clearLayers()
-        createMarkers(year.Year)
+        createMarkers(year)
      
     };
