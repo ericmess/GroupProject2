@@ -101,6 +101,8 @@ var selector = d3.select("#selDataset");
         .text(year.Year)
         .property("value", year.Year);
         });
+            console.log("logging years0");
+         console.log(Years[0]);
         const firstYear = Years[0];
         createMarkers(firstYear)
         console.log("Build new chart");
@@ -113,10 +115,10 @@ var selector = d3.select("#selDataset");
 init();
 
 // ALL -- Used to call functions when a new year is selected in the droplist. 
-function optionChanged(year) {
+function optionChanged(year.Year) {
         //remove map element from html    
         map.remove()       
         //lg.clearLayers()
-        createMarkers(year)
+        createMarkers(year.Year)
      
     };
