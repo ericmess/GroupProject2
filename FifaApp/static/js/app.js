@@ -1,10 +1,8 @@
 
-
+//Eric Kleppen -- start create map 
 function createMap(locations) {
         document.getElementById('weathermap').innerHTML = "<div id='map'></div>";
-            //map.remove()
-        var API_KEY = "pk.eyJ1IjoiYmVuZGdhbWUiLCJhIjoiY2p4MTBiMjRkMDRxdTRibzRpc2xha29vbyJ9.H30YFMJBlbttkBgA0pOigw"
-
+                
         // Create the tile layer that will be the background of our map
         var darkmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
             attribution: "Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>",
@@ -82,10 +80,7 @@ for (var i = 0; i < data.length; i++){
     var lg = L.layerGroup(locationMarkers)
    
     createMap(lg);
-});
-
-
-
+  });
 } // end create markers function
 
 function init() {
