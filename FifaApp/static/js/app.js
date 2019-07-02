@@ -40,7 +40,7 @@ function createMap(locations) {
 function createMarkers(year) {
 
 //api call
-var map_url = `/FinalGamesByYear/${year}`;
+var map_url = `/FinalGamesByYear/${year.Year}`;
 d3.json(map_url).then(function(data){
 
 console.log(data)
