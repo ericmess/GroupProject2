@@ -115,7 +115,7 @@ var selector = d3.select("#selDataset");
 init();
 
 // ALL -- Used to call functions when a new year is selected in the droplist. 
-function optionChanged(year) {
+function optionChanged(route) {
         //remove map element from html    
         map.remove()       
         //lg.clearLayers()
