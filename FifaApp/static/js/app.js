@@ -92,15 +92,15 @@ function init() {
 var selector = d3.select("#selDataset");
 
 // Use the list of years  to populate the select options
-    d3.json("/years").then((Years.Years) => {
+    d3.json("/years").then((Years) => {
     Years.forEach((year) => {
         console.log(year);
         selector
         .append("option")
-        .text(year)
-        .property("value", year);
+        .text(year.Year)
+        .property("value", year.Year);
         });
-        const firstYear = Years.Years[0];
+        const firstYear = Years[0];
         createMarkers(firstYear)
         console.log("Build new chart");
         console.log(firstYear)
