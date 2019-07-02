@@ -106,7 +106,10 @@ function WinnerCountry(ResultsByCountryData,runnerupnation,hostnation) {
         //  console.log(ResultsByCountryData["Yearsrunners-up"]);
       var Cell = winerText.append("h3");
       // Cell.text( " In   "+winnerYear +" " +winnerCOuntry+ " Won the WorldCup");
-       Cell.text( winnerCountry +" won over" +runnerupnation+ " in " + hostnation + ". "+winnerCountry+ " also won in "+ResultsByCountryData["Yearsrunners-up"] +".");
+       Cell.text( winnerCountry +" won over" +runnerupnation+ " in " + hostnation + ". "+winnerCountry+ " also won in "+ResultsByCountryData["Yearsrunners-up"] +". ")
+       
+    ;
+
     };
     
     
