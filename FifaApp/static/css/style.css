@@ -107,12 +107,13 @@
   .hero h1 {
     margin-top: 10px;
     font-size: 0.1rem;
+    font-family: Arial, Helvetica, sans-serif;
     animation: title 1.2s forwards linear;
     color: white;
   }
   
   .hero p {
-    font-size: 26px;
+    font-size: 50px;
     opacity: 0;
     animation: subtitle 1.2s forwards linear;
     animation-delay: 1.2s;

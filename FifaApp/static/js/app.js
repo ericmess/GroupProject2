@@ -1,4 +1,5 @@
-
+var runnerupnation='global';
+var hostnation='global';
 //Eric Kleppen -- start create map 
 function createMap(locations) {
         document.getElementById('weathermap').innerHTML = "<div id='map'></div>";
@@ -90,7 +91,7 @@ for (var i = 0; i < data.length; i++){
 
 //  Function for text data
 
-function WinnerCountry(ResultsByCountryData) {
+function WinnerCountry(ResultsByCountryData,runnerupnation,hostnation) {
 
 
     var winerText = d3.select("#Chart3Text");//select the html element where we will append
@@ -98,13 +99,14 @@ function WinnerCountry(ResultsByCountryData) {
     winerText.selectAll("h3").remove();
     
     
-    console.log("cleared Node");
-         winnerCOuntry=ResultsByCountryData.Country;
+    console.log("cleared Node",runnerupnation,hostnation);
+         winnerCountry=ResultsByCountryData.Country;
          winnerYear=ResultsByCountryData.Yearswon;
+         
         //  console.log(ResultsByCountryData["Yearsrunners-up"]);
       var Cell = winerText.append("h3");
       // Cell.text( " In   "+winnerYear +" " +winnerCOuntry+ " Won the WorldCup");
-       Cell.text( winnerCOuntry +" won the worldcup  in " +winnerYear+ " and was a runner-up in " +ResultsByCountryData["Yearsrunners-up"]);
+       Cell.text( winnerCountry +" won over" +runnerupnation+ " in " + hostnation + ". "+winnerCountry+ " also won in "+ResultsByCountryData["Yearsrunners-up"] +".");
     };
     
     
@@ -182,6 +184,8 @@ d3.json(`/FinalGamesByYear/${year}`).then(function(GetyearCountry) {
     console.log(GetyearCountry);
             nation=GetyearCountry[0]["Country"];
             nation=nation.trim();
+            runnerupnation=GetyearCountry[0]["Runnerup"];
+            hostnation=GetyearCountry[0]["Host"];
 
             switch(nation) {
               case "West Germany":
@@ -193,8 +197,9 @@ d3.json(`/FinalGamesByYear/${year}`).then(function(GetyearCountry) {
   
   d3.json(`/ResultsByCountry/${nation}`).then(function(response1) {
     
-    var ResultsByCountryData=response1;
-    WinnerCountry(ResultsByCountryData);
+    var ResultsByCountryData=response1;console.log(hostnation);
+
+    WinnerCountry(ResultsByCountryData,runnerupnation,hostnation);
 
 // end of update text
 

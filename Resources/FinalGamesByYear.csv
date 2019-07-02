@@ -1,24 +1,12 @@
-﻿Year,Country,WinnerLatitude,WinnerLongitude,FinalScore,Runnerup,RunnerupLatitude,RunnerupLongitude,Venue,Host,HostLatitude,HostLongitude,Attendance
-1930,Uruguay ,-32.522779,-55.765835,4–2, Argentina,-38.416097,-63.616672,Estadio Centenario,"Montevideo, Uruguay",-34.9011127,-56.1645314,80000
-1934,Italy ,41.87194,12.56738,2–1, Czechoslovakia,39.7784223,-84.1646244,Stadio Nazionale PNF,"Rome, Italy",41.9027835,12.4963655,50000
-1938,Italy ,41.87194,12.56738,4–2, Hungary,47.162494,19.5033041,Stade Olympique de Colombes,"Paris, France",48.856614,2.3522219,45000
-1950,Uruguay ,-32.522779,-55.765835,2–1, Brazil,-14.235004,-51.92528,Estádio do Maracanã,"Rio de Janeiro, Brazil",-22.9068467,-43.1728965,"199,854"
-1954,West Germany ,51.165691,10.451526,3–2, Hungary,47.162494,19.5033041,Wankdorf Stadium,"Bern, Switzerland",46.9479739,7.4474468,60000
-1958,Brazil ,-14.235004,-51.92528,5–2, Sweden,60.128161,18.643501,Råsunda Stadium,"Solna, Sweden",59.3688791,18.0084334,51800
-1962,Brazil ,-14.235004,-51.92528,3–1, Czechoslovakia,39.7784223,-84.1646244,Estadio Nacional,"Santiago, Chile",-33.4488897,-70.6692655,69000
-1966,England ,52.3555177,-1.1743197,4–2, West Germany,51.165691,10.451526,Wembley Stadium,"London, England",51.5073509,-0.1277583,93000
-1970,Brazil ,-14.235004,-51.92528,4–1, Italy,41.87194,12.56738,Estadio Azteca,"Mexico City, Mexico",19.4326077,-99.133208,107412
-1974,West Germany ,51.165691,10.451526,2–1, Netherlands,52.132633,5.291266,Olympiastadion,"Munich, West Germany",48.1351253,11.5819805,75200
-1978,Argentina ,-38.416097,-63.616672,3–1, Netherlands,52.132633,5.291266,Estadio Monumental,"Buenos Aires, Argentina",-34.6036844,-58.3815591,71483
-1982,Italy ,41.87194,12.56738,3–1, West Germany,51.165691,10.451526,Santiago Bernabéu,"Madrid, Spain",40.4167754,-3.7037902,90000
-1986,Argentina ,-38.416097,-63.616672,3–2, West Germany,51.165691,10.451526,Estadio Azteca,"Mexico City, Mexico",19.4326077,-99.133208,114600
-1990,West Germany ,51.165691,10.451526,1–0, Argentina,-38.416097,-63.616672,Stadio Olimpico,"Rome, Italy",41.9027835,12.4963655,73603
-1994,Brazil ,-14.235004,-51.92528,0–0, Italy,41.87194,12.56738,Rose Bowl,"Pasadena, California, U.S.",34.1477849,-118.1445155,94194
-1998,France ,46.227638,2.213749,3–0, Brazil,-14.235004,-51.92528,Stade de France,"Saint-Denis, France",48.936181,2.357443,80000
-2002,Brazil ,-14.235004,-51.92528,2–0, Germany,51.165691,10.451526,International Stadium,"Yokohama, Japan",35.4436739,139.6379639,69029
-2006,Italy ,41.87194,12.56738,1–1, France,46.227638,2.213749,Olympiastadion,"Berlin, Germany",52.5200066,13.404954,69000
-2010,Spain ,40.463667,-3.74922,1–0, Netherlands,52.132633,5.291266,Soccer City,"Johannesburg, South Africa",-26.2041028,28.0473051,84490
-2014,Germany ,51.165691,10.451526,1–0, Argentina,-38.416097,-63.616672,Estádio do Maracanã,"Rio de Janeiro, Brazil",-22.9068467,-43.1728965,74738
-2018,France ,46.227638,2.213749,4–2, Croatia,45.1,15.2000001,Luzhniki Stadium,"Moscow, Russia",55.755826,37.6172999,78011
-2022,upcomming,,,,upcomming,,,Lusail Iconic Stadium,"Lusail, Qatar",25.4253918,51.5044957,
-2026,upcomming,,,,upcomming,,,MetLife Stadium,"East Rutherford, New Jersey, U.S.",40.833989,-74.0970865,
+﻿Count of status,Column Labels,,,,,
+Row Labels,wi,Grand Total,,,,
+Germany ,1,1,,,,
+Spain ,1,1,,,,Only nine countries have ever won the World Cup.
+England ,1,1,,,,
+Argentina ,2,2,,,,
+France ,2,2,,,,
+Uruguay ,2,2,,,,
+West Germany ,3,3,,,,
+Italy ,4,4,,,,
+Brazil ,5,5,,,,
+Grand Total,21,21,,,,
