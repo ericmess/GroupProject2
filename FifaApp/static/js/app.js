@@ -102,7 +102,7 @@ var selector = d3.select("#selDataset");
         .property("value", year.Year);
         });
             console.log("logging years0");
-         console.log(Years[0]);
+         console.log(Years.Year[0]);
         const firstYear = Years[0];
         createMarkers(firstYear)
         console.log("Build new chart");
