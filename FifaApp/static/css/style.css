@@ -108,13 +108,15 @@
     margin-top: 10px;
     font-size: 0.1rem;
     animation: title 1.2s forwards linear;
+    color: white;
   }
   
   .hero p {
-    font-size: 2rem;
+    font-size: 26px;
     opacity: 0;
     animation: subtitle 1.2s forwards linear;
     animation-delay: 1.2s;
+    color: white;
   }
   
   /* input placeholder color changes */
@@ -188,6 +190,7 @@
   
     .hero h1 {
       animation: smaller-title 1.2s forwards linear;
+      color: white;
     }
   }
   

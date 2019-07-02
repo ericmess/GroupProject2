@@ -85,6 +85,40 @@ for (var i = 0; i < data.length; i++){
 } // end create markers function
 
 
+
+
+
+//  Function for text data
+
+function WinnerCountry(ResultsByCountryData) {
+
+
+    var winerText = d3.select("#Chart2Text");//select the html element where we will append
+    
+    winerText.selectAll("h3").remove();
+    
+    
+    console.log("cleared Node");
+         winnerCOuntry=ResultsByCountryData.Country;
+         winnerYear=ResultsByCountryData.Yearswon;
+        //  console.log(ResultsByCountryData["Yearsrunners-up"]);
+      var Cell = winerText.append("h3");
+      // Cell.text( " In   "+winnerYear +" " +winnerCOuntry+ " Won the WorldCup");
+       Cell.text( winnerCOuntry +" won the worldcup  in " +winnerYear+ " and was a runner-up in " +ResultsByCountryData["Yearsrunners-up"]);
+    };
+    
+    
+
+
+
+
+
+
+
+
+
+
+
 // ALL -- initiate javascript to use the first year from the drop list.
 function init() {
 
@@ -108,7 +142,27 @@ var selector = d3.select("#selDataset");
         console.log("Build new chart");
         console.log(firstYear)
     });
-        
+ 
+    
+
+// default text before rendering the charts
+var Text1Select = d3.select("#Chart1Text");
+Text1Select
+.append("h3").text("");
+
+var Text1Select = d3.select("#Chart1Text");
+Text1Select
+.append("h3").text("");
+
+var Text1Select = d3.select("#Chart1Text");
+Text1Select
+.append("h3").text("");
+
+
+
+
+
+
 }; //end init function
 
 //call function initiate
@@ -121,5 +175,31 @@ function optionChanged(year) {
         map.remove()       
         //lg.clearLayers()
         createMarkers(year)
+
+// begin of update text
+
+d3.json(`/FinalGamesByYear/${year}`).then(function(GetyearCountry) {
+    console.log(GetyearCountry);
+            nation=GetyearCountry[0]["Country"];
+            nation=nation.trim();
+
+            switch(nation) {
+              case "West Germany":
+                nation="Germany"
+                break;
+              
+              default:
+                nation=nation;                }          
+  
+  d3.json(`/ResultsByCountry/${nation}`).then(function(response1) {
+    
+    var ResultsByCountryData=response1;
+    WinnerCountry(ResultsByCountryData);
+
+// end of update text
+
+});
+});
+
      
     };
