@@ -38,7 +38,7 @@ function createMap(locations) {
     } // end function create map
 
 //Eric Kleppen - Create the circles on the map
-function createMarkers(year) {
+function createMarkers(year.Year) {
 
 //api call
 var map_url = `/FinalGamesByYear/${year.Year}`;
