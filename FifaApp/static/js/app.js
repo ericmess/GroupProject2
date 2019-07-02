@@ -1,3 +1,5 @@
+
+
 var runnerupnation='global';
 var hostnation='global';
 //Eric Kleppen -- start create map 
@@ -106,6 +108,8 @@ function WinnerCountry(ResultsByCountryData,runnerupnation,hostnation) {
        Cell.text( winnerCountry +" won over" +runnerupnation+ " in " + hostnation + ". "+winnerCountry+ " also won in "+ResultsByCountryData["Yearsrunners-up"] +". ");
 
     };// end of function WinnerCountry
+
+
 function updateText(year){
 // begin of update text
 
