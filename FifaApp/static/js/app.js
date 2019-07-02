@@ -41,7 +41,7 @@ function createMap(locations) {
 function createMarkers(year) {
 
 //api call
-var map_url = `/FinalGamesByYear/${year.Year}`;
+var map_url = `/FinalGamesByYear/${year}`;
 d3.json(map_url).then(function(data){
 
 console.log(data)
@@ -102,8 +102,8 @@ var selector = d3.select("#selDataset");
         .property("value", year.Year);
         });
             console.log("logging years0");
-         console.log(Years.Year[0]);
-        const firstYear = Years[0];
+         console.log(Years[0].Year);
+        const firstYear = Years[0].Year;
         createMarkers(firstYear)
         console.log("Build new chart");
         console.log(firstYear)
