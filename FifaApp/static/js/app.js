@@ -93,7 +93,7 @@ for (var i = 0; i < data.length; i++){
 function WinnerCountry(ResultsByCountryData) {
 
 
-    var winerText = d3.select("#Chart2Text");//select the html element where we will append
+    var winerText = d3.select("#Chart3Text");//select the html element where we will append
     
     winerText.selectAll("h3").remove();
     
