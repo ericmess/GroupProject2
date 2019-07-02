@@ -36,7 +36,7 @@ function createMap(locations) {
 
     } // end function create map
 
-
+//Eric Kleppen - Create the circles on the map
 function createMarkers(year) {
 
 //api call
@@ -83,6 +83,8 @@ for (var i = 0; i < data.length; i++){
   });
 } // end create markers function
 
+
+// ALL -- initiate javascript to use the first year from the drop list.
 function init() {
 
 // update dropdown menu
@@ -106,9 +108,10 @@ var selector = d3.select("#selDataset");
         
 }; //end init function
 
-
+//call function initiate
 init();
 
+// ALL -- Used to call functions when a new year is selected in the droplist. 
 function optionChanged(year) {
         //remove map element from html    
         map.remove()       
