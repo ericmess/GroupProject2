@@ -88,17 +88,14 @@ for (var i = 0; i < data.length; i++){
 
 
 
-
 //  Function for text data
 
 function WinnerCountry(ResultsByCountryData,runnerupnation,hostnation) {
 
-
-    var winerText = d3.select("#Chart3Text");//select the html element where we will append
+   var winerText = d3.select("#Chart3Text");//select the html element where we will append
     
     winerText.selectAll("h3").remove();
-    
-    
+       
     console.log("cleared Node",runnerupnation,hostnation);
          winnerCountry=ResultsByCountryData.Country;
          winnerYear=ResultsByCountryData.Yearswon;
@@ -106,67 +103,76 @@ function WinnerCountry(ResultsByCountryData,runnerupnation,hostnation) {
         //  console.log(ResultsByCountryData["Yearsrunners-up"]);
       var Cell = winerText.append("h3");
       // Cell.text( " In   "+winnerYear +" " +winnerCOuntry+ " Won the WorldCup");
-       Cell.text( winnerCountry +" won over" +runnerupnation+ " in " + hostnation + ". "+winnerCountry+ " also won in "+ResultsByCountryData["Yearsrunners-up"] +". ")
-       
-    ;
+       Cell.text( winnerCountry +" won over" +runnerupnation+ " in " + hostnation + ". "+winnerCountry+ " also won in "+ResultsByCountryData["Yearsrunners-up"] +". ");
 
-    };
+    };// end of function WinnerCountry
+function updateText(year){
+// begin of update text
+
+    d3.json(`/FinalGamesByYear/${year}`).then(function(GetyearCountry) {
+        console.log(GetyearCountry);
+                nation=GetyearCountry[0]["Country"];
+                nation=nation.trim();
+                runnerupnation=GetyearCountry[0]["Runnerup"];
+                hostnation=GetyearCountry[0]["Host"];
+
+                switch(nation) {
+                    case "West Germany":
+                    nation="Germany"
+                    break;
+                    
+                    default:
+                    nation=nation;                }          
+        
+        d3.json(`/ResultsByCountry/${nation}`).then(function(response1) {
+        
+            var ResultsByCountryData = response1;
+            console.log(hostnation);
+            
+            WinnerCountry(ResultsByCountryData,runnerupnation,hostnation);
+
+        });//end of api call resultsByCountry
+    
+    });// end of update text
+}; //end of updateText function
     
     
-
-
-
-
-
-
-
-
-
-
-
 // ALL -- initiate javascript to use the first year from the drop list.
 function init() {
 
-// update dropdown menu
-// Grab a reference to the dropdown select element
-var selector = d3.select("#selDataset");
+    // update dropdown menu
+    // Grab a reference to the dropdown select element
+    var selector = d3.select("#selDataset");
 
-// Use the list of years  to populate the select options
-    d3.json("/years").then((Years) => {
-    Years.forEach((year) => {
-        console.log(year);
-        selector
-        .append("option")
-        .text(year.Year)
-        .property("value", year.Year);
-        });
+    // Use the list of years  to populate the select options
+        d3.json("/years").then((Years) => {
+        Years.forEach((year) => {
+            console.log(year);
+            selector
+            .append("option")
+            .text(year.Year)
+            .property("value", year.Year);
+            });
             console.log("logging years0");
-         console.log(Years[0].Year);
-        const firstYear = Years[0].Year;
-        createMarkers(firstYear)
-        console.log("Build new chart");
-        console.log(firstYear)
-    });
- 
-    
+            console.log(Years[0].Year);
+            const firstYear = Years[0].Year;
+            //run functions on initial page load
+            
+            createMarkers(firstYear);
+            updateText(firstYear);
+        });
+    // default text before rendering the charts
+    var Text1Select = d3.select("#Chart1Text");
+    Text1Select
+    .append("h3").text("");
 
-// default text before rendering the charts
-var Text1Select = d3.select("#Chart1Text");
-Text1Select
-.append("h3").text("");
+    var Text1Select = d3.select("#Chart1Text");
+    Text1Select
+    .append("h3").text("");
 
-var Text1Select = d3.select("#Chart1Text");
-Text1Select
-.append("h3").text("");
-
-var Text1Select = d3.select("#Chart1Text");
-Text1Select
-.append("h3").text("");
-
-
-
-
-
+    var Text1Select = d3.select("#Chart1Text");
+    Text1Select
+    .append("h3").text("");
 
 }; //end init function
 
@@ -176,38 +182,13 @@ init();
 // ALL -- Used to call functions when a new year is selected in the droplist. 
 function optionChanged(year) {
         console.log(year)
+        
         //remove map element from html    
         map.remove()       
-        //lg.clearLayers()
-        createMarkers(year)
+        
+        //Run functions on year change
+        createMarkers(year);
+        updateText(firstYear);
 
-// begin of update text
-
-d3.json(`/FinalGamesByYear/${year}`).then(function(GetyearCountry) {
-    console.log(GetyearCountry);
-            nation=GetyearCountry[0]["Country"];
-            nation=nation.trim();
-            runnerupnation=GetyearCountry[0]["Runnerup"];
-            hostnation=GetyearCountry[0]["Host"];
-
-            switch(nation) {
-              case "West Germany":
-                nation="Germany"
-                break;
-              
-              default:
-                nation=nation;                }          
-  
-  d3.json(`/ResultsByCountry/${nation}`).then(function(response1) {
     
-    var ResultsByCountryData=response1;console.log(hostnation);
-
-    WinnerCountry(ResultsByCountryData,runnerupnation,hostnation);
-
-// end of update text
-
-});
-});
-
-     
-    };
+    };  //end of change function
