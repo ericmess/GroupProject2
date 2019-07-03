@@ -103,7 +103,8 @@
     background-position: bottom center;
      background-size: cover; 
   }
-  
+ .footer h8{color: white;}
+ .icon {color: white;}
   .hero h1 {
     margin-top: 10px;
     font-size: 0.1rem;
