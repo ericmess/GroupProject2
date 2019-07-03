@@ -92,22 +92,30 @@ for (var i = 0; i < data.length; i++){
 
 //  Function for text data
 
-function DynamicHeaders(ResultsByCountryData,runnerupnation,hostnation) {
+function DynamicHeaders(ResultsByCountryData,runnerupnation,hostnation,AttendanceNo, venueName) {
 
    var MapText = d3.select("#Chart1Text");//select the html element where we will append
-   var AttendanceText= 
+   var AttendanceText= d3.select("#Chart2Text")
+
+//    text for map
    MapText.selectAll("h3").remove();
+   AttendanceText.selectAll("h3").remove();
        
     console.log("cleared Node",runnerupnation,hostnation);
          winnerCountry=ResultsByCountryData.Country;
          winnerYear=ResultsByCountryData.Yearswon;
-         
-        //  console.log(ResultsByCountryData["Yearsrunners-up"]);
-      var Cell = MapText.append("h3");
-      // Cell.text( " In   "+winnerYear +" " +winnerCOuntry+ " Won the WorldCup");
-       Cell.text( winnerCountry +" won over" +runnerupnation+ " in " + hostnation + ". "+winnerCountry+ " also won in "+ResultsByCountryData["Yearsrunners-up"] +". ");
+         var MapCell = MapText.append("h3");
+         MapCell.text( winnerCountry +" won over" +runnerupnation+ " in " + hostnation + ". "+winnerCountry+ " also won in "+ResultsByCountryData["Yearsrunners-up"] +". ");
 
-    };// end of function WinnerCountry
+         var AttCell = AttendanceText.append("h3");
+         AttCell.text( "The game took place at the  " + venueName + " in "+hostnation +" drawing  "+AttendanceNo+ " spectators. ");
+
+       // text for attendance 
+
+
+
+
+    };// end of function DynamicHeaders
 
 
 function updateText(year){
@@ -119,6 +127,8 @@ function updateText(year){
                 nation=nation.trim();
                 runnerupnation=GetyearCountry[0]["Runnerup"];
                 hostnation=GetyearCountry[0]["Host"];
+                AttendanceNo=GetyearCountry[0]["Attendance"];
+                venueName=GetyearCountry[0]["Venue"];
 
                 switch(nation) {
                     case "West Germany":
@@ -133,7 +143,7 @@ function updateText(year){
             var ResultsByCountryData = response1;
             console.log(hostnation);
             
-            DynamicHeaders(ResultsByCountryData,runnerupnation,hostnation);
+            DynamicHeaders(ResultsByCountryData,runnerupnation,hostnation,AttendanceNo,venueName);
 
         });//end of api call resultsByCountry
     
