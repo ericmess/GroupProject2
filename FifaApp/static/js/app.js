@@ -192,7 +192,7 @@ function optionChanged(year) {
         
         //Run functions on year change
         createMarkers(year);
-        updateText(firstYear);
+        updateText(year);
 
     
     };  //end of change function
