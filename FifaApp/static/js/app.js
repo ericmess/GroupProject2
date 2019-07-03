@@ -100,12 +100,31 @@ function DynamicHeaders(ResultsByCountryData,runnerupnation,hostnation,Attendanc
 //    text for map
    MapText.selectAll("h3").remove();
    AttendanceText.selectAll("h3").remove();
+
+
+
+
+   
        
     console.log("cleared Node",runnerupnation,hostnation);
          winnerCountry=ResultsByCountryData.Country;
          winnerYear=ResultsByCountryData.Yearswon;
+        wonAlso=ResultsByCountryData["Yearsrunners-up"];
+         
+        switch(winnerCountry) {
+            case "Uruguay":
+            wonAlso="1930 and 1950"
+            break;
+            
+            default:
+                wonAlso=wonAlso;}
+
+
+
+
+
          var MapCell = MapText.append("h3");
-         MapCell.text( winnerCountry +" won over" +runnerupnation+ " in " + hostnation + ". "+winnerCountry+ " also won in "+ResultsByCountryData["Yearsrunners-up"] +". ");
+         MapCell.text( winnerCountry +" won over" +runnerupnation+ " in " + hostnation + ". "+winnerCountry+ " also won in "+wonAlso +". ");
 
          var AttCell = AttendanceText.append("h3");
          AttCell.text( "The game took place at the  " + venueName + " in "+hostnation +" drawing  "+AttendanceNo+ " spectators. ");
