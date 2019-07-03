@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FIFA World Cup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script>
+      document.write('<a href="' + document.referrer + '">Go Back</a>');
+  </script>
+  </head>
+  <body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+              FIFA WORLD CUP WINNERS AND RUNNERS-UP
+            </h1>
+        </div>
+        <br>
+        <div class="container">
+            <table id="winsTable" class="table is-bordered">
+                <thead>
+                    <tr>
+                    <th>Country</th>
+                    <th>Wins</th>
+                    <th>Runner Up</th>
+                    <th>Years Won</th>
+                    <th>Years Runner Up</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in winners %}
+                    <tr>   
+                    <td>{{ r.country }}</td>
+                    <td align="center">{{ r.wins }}</td>
+                    <td align="center">{{ r.runners_up }}</td>
+                    <td>{{ r.years_won }}</td>
+                    <td>{{ r.years_runners_up }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <img src="{{ chart }}" alt="Chart">
+  </body>
+</html>
+
