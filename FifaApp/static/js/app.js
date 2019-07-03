@@ -92,18 +92,18 @@ for (var i = 0; i < data.length; i++){
 
 //  Function for text data
 
-function WinnerCountry(ResultsByCountryData,runnerupnation,hostnation) {
+function DynamicHeaders(ResultsByCountryData,runnerupnation,hostnation) {
 
-   var winerText = d3.select("#Chart3Text");//select the html element where we will append
-    
-    winerText.selectAll("h3").remove();
+   var MapText = d3.select("#Chart1Text");//select the html element where we will append
+   var AttendanceText= 
+   MapText.selectAll("h3").remove();
        
     console.log("cleared Node",runnerupnation,hostnation);
          winnerCountry=ResultsByCountryData.Country;
          winnerYear=ResultsByCountryData.Yearswon;
          
         //  console.log(ResultsByCountryData["Yearsrunners-up"]);
-      var Cell = winerText.append("h3");
+      var Cell = MapText.append("h3");
       // Cell.text( " In   "+winnerYear +" " +winnerCOuntry+ " Won the WorldCup");
        Cell.text( winnerCountry +" won over" +runnerupnation+ " in " + hostnation + ". "+winnerCountry+ " also won in "+ResultsByCountryData["Yearsrunners-up"] +". ");
 
@@ -133,7 +133,7 @@ function updateText(year){
             var ResultsByCountryData = response1;
             console.log(hostnation);
             
-            WinnerCountry(ResultsByCountryData,runnerupnation,hostnation);
+            DynamicHeaders(ResultsByCountryData,runnerupnation,hostnation);
 
         });//end of api call resultsByCountry
     
