@@ -193,6 +193,15 @@
       animation: smaller-title 1.2s forwards linear;
       color: white;
     }
+
+    #container {
+      min-width: 200px;
+      max-width: 200px;
+      height: 20px;
+      margin: 0 auto;
+    }
+
+
   }
   
   /* keyframe animations which will be used to animate the title */
