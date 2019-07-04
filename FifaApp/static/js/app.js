@@ -37,7 +37,36 @@ function createMap(locations) {
         L.control.layers(baseMaps, overlayMaps, {
             collapsed: false
         }).addTo(map);
+  
+        
+        //legend example https://leafletjs.com/examples/choropleth/
+  var legend = L.control({position: 'bottomright'});
 
+  //function to get the legend color
+    function legColor(d) {
+      return d === 'Host' ? 'red' :
+             d === 'Winner'  ? 'yellow' :
+                    'white' ;
+       
+    };
+  
+  // 
+    legend.onAdd = function (map) {
+  
+      var div = L.DomUtil.create('div', 'info legend'),
+          cir = ['Host', 'Winner', 'Runner Up']
+    
+      for (var i = 0; i < cir.length; i++) {
+          div.innerHTML +=
+              '<i style="background:' + legColor(cir[i]) + '"></i> ' 
+              + cir[i] +  '<br>'
+              //+ ( '<br>' : '+');
+       }
+  
+        return div;
+    };
+  
+    legend.addTo(map);
     } // end function create map
 
 //Eric Kleppen - Create the circles on the map

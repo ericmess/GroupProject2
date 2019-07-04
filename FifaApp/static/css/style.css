@@ -10,6 +10,17 @@
     margin: 0;
   }
   
+.legend {
+  line-height: 18px;
+  color: white;
+}
+.legend i {
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin-right: 6px;
+  opacity: 1;
+}
   /* The wrapper contains all of the page's content besides the footer, which is pushed to the bottom of the page */
   .wrapper {
     position: relative;
