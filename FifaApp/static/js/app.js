@@ -5,7 +5,7 @@ var hostnation='global';
 //Eric Kleppen -- start create map 
 function createMap(locations) {
         document.getElementById('weathermap').innerHTML = "<div id='map'></div>";
-          var API_KEY = "pk.eyJ1IjoiYmVuZGdhbWUiLCJhIjoiY2p4MTBiMjRkMDRxdTRibzRpc2xha29vbyJ9.H30YFMJBlbttkBgA0pOigw"
+          var API_KEY = ""
       
         // Create the tile layer that will be the background of our map
         var darkmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
